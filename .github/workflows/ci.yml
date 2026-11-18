@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to publish releases on tags
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: extractor/go.mod
+          cache-dependency-path: extractor/go.sum
+
+      - name: Install busybox and e2fsprogs
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq busybox e2fsprogs
+
+      - name: Lint
+        run: |
+          shellcheck -s sh customize.sh action.sh service.sh uninstall.sh common/functions.sh common/mount.sh
+          shellcheck tools/*.sh tests/*.sh
+          cd extractor
+          test -z "$(gofmt -l .)" || { gofmt -l .; echo "run gofmt"; exit 1; }
+          go vet ./...
+
+      - name: Firmware extractor tests (incl. real mke2fs images)
+        working-directory: extractor
+        run: go test -race -v ./...
+
+      - name: Installer tests (busybox ash, same shell as Magisk)
+        run: tests/run.sh "busybox ash"
+
+      - name: Installer tests (dash)
+        run: tests/run.sh dash
+
+      - name: Real bind mounts (root, private mount namespace)
+        run: sudo tests/run.sh "busybox ash"
+
+      - name: Build module zip and PC extractors
+        run: tools/build.sh --pc
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: classic-galaxy-sounds
+          path: dist/*
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true

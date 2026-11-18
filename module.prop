@@ -1,0 +1,7 @@
+id=classic_galaxy_sounds
+name=Classic Galaxy Sounds
+version=v1.0.0
+versionCode=100
+author=Kutjaneiro
+description=Brings the original sounds of classic Galaxy phones (S3 and others) to One UI 8/9. Put the old phone's official firmware in Download and flash: the sounds are extracted on the phone. No Samsung audio is bundled.
+updateJson=https://raw.githubusercontent.com/Kutjaneiro/classic-galaxy-sounds/main/update.json

@@ -1,0 +1,7 @@
+# Scripts run on Android: CRLF line endings would break them
+* text=auto eol=lf
+META-INF/com/google/android/update-binary text eol=lf
+*.ogg binary
+*.mp3 binary
+*.wav binary
+*.zip binary

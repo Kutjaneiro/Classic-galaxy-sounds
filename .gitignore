@@ -1,0 +1,9 @@
+dist/
+
+# Samsung's sounds are copyrighted: never commit them
+sounds/**/*
+!sounds/README.md
+!sounds/*/
+!sounds/*/.gitkeep
+extractor/cgs-extract*
+build/
