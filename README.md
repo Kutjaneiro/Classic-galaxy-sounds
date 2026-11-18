@@ -2,8 +2,26 @@
 
 [![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
-Bring the original sounds of classic Galaxy phones (Galaxy S3 and friends) to
-modern Samsung devices running **One UI 8 / 9**.
+A **root module** that brings the original sounds of classic Galaxy phones
+(Galaxy S3 and friends) to Samsung phones running **One UI 8 / 9**. The sounds
+come from the **official firmware of the old phone**, which you download
+yourself: the module extracts them from it on the phone while installing.
+
+## Requirements
+
+- **A rooted Samsung phone on One UI 8 or 9**, with Magisk, KernelSU (3.0+, no
+  metamodule needed) or APatch. Temporary root works too. Without root it
+  can't be installed: the stock sounds live in the read-only system partition.
+- **The official firmware of the old Galaxy you want the sounds from**, for
+  example the `GT-I9300` firmware for the Galaxy S3 (about 1 GB, any region).
+  It's the regular firmware package from firmware download sites (such as
+  SamFW or SamMobile) or tools such as Frija. The firmware of your current
+  phone won't do: it has neither the old sounds nor a format the extractor
+  reads.
+- **About 2 GB of free space** while installing (the firmware's system image
+  is unpacked temporarily, then deleted).
+
+## What's in the project
 
 The project has two parts:
 
