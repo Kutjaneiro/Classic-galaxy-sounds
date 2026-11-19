@@ -21,8 +21,9 @@ notifications, alarms and UI sounds (lock, charging, touch...).
 ## Install
 
 1. Put the firmware in the phone's **Download** folder. The file name doesn't matter.
-2. Flash the module zip from [Releases](../../releases) in your root manager.
-   It extracts the sounds from the firmware (about a minute).
+2. Download **`ClassicGalaxySounds-…-root-module.zip`** from [Releases](../../releases)
+   (the other files there are optional PC tools) and install it in your root
+   manager. It extracts the sounds from the firmware (about a minute).
 3. Done: the sounds are active right away. Pick the new ringtones in
    **Settings > Sounds and vibration**.
 

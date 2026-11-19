@@ -255,7 +255,7 @@ big_file() { mkdir -p "${1%/*}"; truncate -s 200M "$1"; }
 setup_firmware_in_download() {
   stock_device; fake_extractor
   big_file "$ROOT/sdcard/Download/SAMFW.COM_GT-I9300_I9300XXUGPE1_fac.zip"
-  echo "small" > "$ROOT/sdcard/Download/classic-galaxy-sounds-v1.0.0.zip"
+  echo "small" > "$ROOT/sdcard/Download/ClassicGalaxySounds-v1.0.0-root-module.zip"
   big_file "$ROOT/sdcard/Download/holiday photos.zip"
 }
 setup_broken_firmware() {
@@ -279,7 +279,7 @@ setup_firmware_delete() {
   ZIPFILE="$ROOT/cache/module.zip"
   mkdir -p "$ROOT/cache"
   echo "the module zip" > "$ZIPFILE"
-  cp "$ZIPFILE" "$ROOT/sdcard/Download/classic-galaxy-sounds-v1.0.1.zip"
+  cp "$ZIPFILE" "$ROOT/sdcard/Download/ClassicGalaxySounds-v1.0.1-root-module.zip"
   mkdir -p "$ROOT/bin"
   printf '#!/bin/sh\necho "/dev/input/event0: EV_KEY KEY_VOLUMEUP DOWN"\n' > "$ROOT/bin/getevent"
   chmod 755 "$ROOT/bin/getevent"
@@ -290,7 +290,7 @@ run_install setup_firmware_in_download
 check "exits successfully"              [ "$STATUS" -eq 0 ]
 check "extractor ran on the firmware"   grep -q 'SAMFW.COM_GT-I9300_I9300XXUGPE1_fac.zip -o' "$MODPATH/extractor-args"
 check "extractor gets the maps"         grep -q -- "--maps $MODPATH/maps" "$MODPATH/extractor-args"
-check "small zips ignored"              bash -c "! grep -q 'classic-galaxy-sounds-v1' '$MODPATH/install.log'"
+check "small zips ignored"              bash -c "! grep -q 'ClassicGalaxySounds-v1' '$MODPATH/install.log'"
 check "other big zips skipped quietly"  bash -c "! grep -q 'holiday photos' '$MODPATH/install.log'"
 check "extractor output shown"          grep -q 'Firmware: GT-I9300' "$MODPATH/install.log"
 check "sounds installed"                grep -q s3 "$MODPATH/media/ui/Lock.ogg"
@@ -306,8 +306,8 @@ echo "[firmware deleted with Vol+]"
 run_install setup_firmware_delete
 check "exits successfully"              [ "$STATUS" -eq 0 ]
 check "firmware deleted"                [ ! -e "$ROOT/sdcard/Download/SAMFW.COM_GT-I9300_I9300XXUGPE1_fac.zip" ]
-check "downloaded module zip deleted"   [ ! -e "$ROOT/sdcard/Download/classic-galaxy-sounds-v1.0.1.zip" ]
-check "different zip, same name kept"   [ -f "$ROOT/sdcard/Download/classic-galaxy-sounds-v1.0.0.zip" ]
+check "downloaded module zip deleted"   [ ! -e "$ROOT/sdcard/Download/ClassicGalaxySounds-v1.0.1-root-module.zip" ]
+check "different zip, same name kept"   [ -f "$ROOT/sdcard/Download/ClassicGalaxySounds-v1.0.0-root-module.zip" ]
 check "other files untouched"           [ -f "$ROOT/sdcard/Download/holiday photos.zip" ]
 ZIPFILE=""
 check "says so"                         grep -q 'Deleted' "$MODPATH/install.log"
