@@ -181,7 +181,7 @@ needs a map from One UI names to its own. Add `maps/<phone>.conf` with a
 tests/run.sh                           # installer + mount tests on a fake One UI filesystem
 sudo tests/run.sh                      # ...including real bind mounts (Linux)
 tests/run.sh "busybox ash"             # ...with the shell root managers use
-tools/build.sh                         # builds dist/ClassicGalaxySounds-<version>-root-module.zip (needs Go)
+tools/build.sh                         # builds dist/ClassicGalaxySounds-<version>-Android-root-module.zip (needs Go)
 tools/build.sh --pc                    # ...plus cgs-extract for Windows, macOS and Linux
 ```
 

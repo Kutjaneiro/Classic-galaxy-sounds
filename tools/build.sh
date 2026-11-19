@@ -11,7 +11,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 version=$(sed -n 's/^version=//p' module.prop | tr -d '\r')
-out="dist/ClassicGalaxySounds-$version-root-module.zip"
+out="dist/ClassicGalaxySounds-$version-Android-root-module.zip"
 stage=build/bin
 files=(META-INF module.prop customize.sh action.sh service.sh uninstall.sh common config.conf ui-map.conf sounds maps LICENSE)
 
@@ -37,10 +37,10 @@ build_extractor linux amd64 "$stage/cgs-extract-x64"     # emulators
 
 if [ "${1:-}" = "--pc" ]; then
   version_tag=${version#v}
-  build_extractor windows amd64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-windows-x64.exe"
-  build_extractor darwin arm64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-macos-arm64"
-  build_extractor darwin amd64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-macos-x64"
-  build_extractor linux amd64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-linux-x64"
+  build_extractor windows amd64 "dist/SoundExtractor-v$version_tag-Windows.exe"
+  build_extractor darwin arm64 "dist/SoundExtractor-v$version_tag-macOS-AppleSilicon"
+  build_extractor darwin amd64 "dist/SoundExtractor-v$version_tag-macOS-Intel"
+  build_extractor linux amd64 "dist/SoundExtractor-v$version_tag-Linux"
 fi
 
 if command -v zip >/dev/null; then
