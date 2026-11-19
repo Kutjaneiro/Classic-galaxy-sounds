@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.2
+## v1.0.3
 
 - Ready for the KernelSU Modules repository: `module.yaml` and immutable GitHub releases.
 - Release files renamed so it's clear which one to download:
