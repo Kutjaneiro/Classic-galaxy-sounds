@@ -35,6 +35,8 @@ At the end the installer offers to delete the firmware and the module zip
 
 ## Good to know
 
+- **Tested on** a Galaxy S24 Ultra (SM-S928B) with One UI 9, KernelSU and
+  temporary root, using the Galaxy S3's firmware (`GT-I9300`).
 - **Uninstalling** in the root manager leaves nothing behind: the stock sounds
   come back and the old ones leave the ringtone lists.
 - **Galaxy S3:** 54 of the 94 One UI sounds are replaced; the rest belong to
