@@ -9,6 +9,6 @@ sounds from it. Requirements and steps: [README](https://github.com/Kutjaneiro/c
 > ⚠️ With temporary root, don't press *Reboot* after installing: no reboot is
 > needed, and a full reboot drops root.
 
-**💻 `PC-only-extractor-…`**: optional. Only if you'd rather extract the sounds
-on a computer: `windows-x64.exe` for Windows, `macos-arm64` for Apple Silicon
+**💻 `ClassicGalaxySounds-…-sound-extractor-…`**: optional, for computers. Only
+if you'd rather extract the sounds on a PC instead of on the phone: `windows-x64.exe` for Windows, `macos-arm64` for Apple Silicon
 Macs, `macos-x64` for Intel Macs, `linux-x64` for Linux.

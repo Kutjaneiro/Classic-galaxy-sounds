@@ -37,10 +37,10 @@ build_extractor linux amd64 "$stage/cgs-extract-x64"     # emulators
 
 if [ "${1:-}" = "--pc" ]; then
   version_tag=${version#v}
-  build_extractor windows amd64 "dist/PC-only-extractor-v$version_tag-windows-x64.exe"
-  build_extractor darwin arm64 "dist/PC-only-extractor-v$version_tag-macos-arm64"
-  build_extractor darwin amd64 "dist/PC-only-extractor-v$version_tag-macos-x64"
-  build_extractor linux amd64 "dist/PC-only-extractor-v$version_tag-linux-x64"
+  build_extractor windows amd64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-windows-x64.exe"
+  build_extractor darwin arm64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-macos-arm64"
+  build_extractor darwin amd64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-macos-x64"
+  build_extractor linux amd64 "dist/ClassicGalaxySounds-v$version_tag-sound-extractor-linux-x64"
 fi
 
 if command -v zip >/dev/null; then
