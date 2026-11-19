@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/KernelSU-Modules/tools/main/schemas/module.schema.json
+schemaVersion: 1
+id: classic_galaxy_sounds
+name: Classic Galaxy Sounds
+summary: The original sounds of classic Galaxy phones (Galaxy S3 and friends) on One UI 8/9. Extracted on the phone from the old Galaxy's official firmware; no Samsung audio is bundled.
+description: README.md
+license: MIT
+homepage: https://github.com/Kutjaneiro/classic-galaxy-sounds
+support: https://github.com/Kutjaneiro/classic-galaxy-sounds/issues
+tags: [sounds, samsung, one-ui, ringtones, customization]
+metamodule: false
+compatibility:
+  architectures: [arm64-v8a, x86_64]

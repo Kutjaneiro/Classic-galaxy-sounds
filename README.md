@@ -1,6 +1,6 @@
 # Classic Galaxy Sounds
 
-[![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
+[![CI](https://github.com/Kutjaneiro/classic-galaxy-sounds/actions/workflows/ci.yml/badge.svg)](https://github.com/Kutjaneiro/classic-galaxy-sounds/actions/workflows/ci.yml)
 
 A **root module** that brings the original sounds of classic Galaxy phones
 (Galaxy S3 and friends) to Samsung phones running **One UI 8 / 9**: ringtones,
@@ -21,7 +21,7 @@ notifications, alarms and UI sounds (lock, charging, touch...).
 ## Install
 
 1. Put the firmware in the phone's **Download** folder. The file name doesn't matter.
-2. Download **`ClassicGalaxySounds-…-Android-root-module.zip`** from [Releases](../../releases)
+2. Download **`ClassicGalaxySounds-…-Android-root-module.zip`** from [Releases](https://github.com/Kutjaneiro/classic-galaxy-sounds/releases)
    (the other files there are optional PC tools) and install it in your root
    manager. It extracts the sounds from the firmware (about a minute).
 3. Done: the sounds are active right away. Pick the new ringtones in
